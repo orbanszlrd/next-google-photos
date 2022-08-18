@@ -1,0 +1,33 @@
+.loader {
+    position: absolute;
+    display: block;
+    top:0;
+    left:0;
+    right: 0;
+    bottom:0;
+    z-index: 1;
+    background-color: rgba(255,255,255,1);
+
+    .spinner {
+        position: relative;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        text-align: center;
+        font-size: 2rem;
+        color: gray;
+        animation: spin infinite 2s linear;
+        }
+        
+    @keyframes spin {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+}
+  
+
+  
