@@ -1,0 +1,17 @@
+.filter {
+    position: relative;
+    div {
+        position: absolute;
+        top:0;
+        left: 0;
+        padding: 0.6rem;
+        opacity: 0.5;
+    }
+
+    input {
+        position: relative;
+        top:0;
+        padding-left: 2rem;
+        background-color: transparent;
+    }
+}

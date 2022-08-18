@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
+
+$color: #333;
+$backgroundColor: whitesmoke;
+
+// $color: whitesmoke;
+// $backgroundColor: #141414;
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+
+    color: $color;
+    background-color: $backgroundColor;
+  }
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: lightgray;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+}
+
+h1 {
+  text-align: center;
+  font-size: 4.2rem;
+}
+
+h2 {
+  text-align: center;
+  font-size: 3.15rem;
+}
+
+h3 {
+  font-size: 2.36rem;
+  font-weight: normal;
+}
+
+h4 {
+  font-size: 1.77rem;
+}
+
+h5 {
+  font-size: 1.33rem;
+}
+
+header {
+  box-shadow: 0 2px 5px #8888884d;
+  background-color: white;
+}
+
+nav {
+  a {
+    color: #666;
+  }
+
+  a:hover {
+    color: #222;
+  }
+}
+
+footer {
+  color: gray;
+}
+
+
+input[type=text],
+input[type=search] {
+  padding: .5rem;
+  width: 100%;
+  border: 1px solid silver;
+  box-shadow: 0 0 8px silver;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  outline: none;
+}
+
+input:focus {
+  border-color: darkgrey;
+}
