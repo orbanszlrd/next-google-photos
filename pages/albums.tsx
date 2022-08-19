@@ -1,28 +1,22 @@
 import { NextPage } from 'next';
 import Head from 'next/head';
-
 import { useEffect, useState } from 'react';
-
-import { AppDispatch, RootState } from '../app/store';
 import { useSelector, useDispatch } from 'react-redux';
+import { GoogleAlbum } from '../types/google';
+import { AppDispatch, RootState } from '../app/store';
 import { setFilter, fetchAllGoogleAlbums } from '../features/photoSlice';
-
+import styles from '../styles/Albums.module.scss';
 import AlbumList from '../components/album-list';
+import ElementCounter from '../components/element-counter';
 import Filter from '../components/filter';
 import Layout from '../components/layout';
 import Loader from '../components/loader';
-import { GoogleAlbum } from '../types/google';
-
-import styles from '../styles/Albums.module.scss';
-import ElementCounter from '../components/element-counter';
 
 const Albums: NextPage = () => {
   const loading = useSelector((state: RootState) => state.photo.loading);
   const albums = useSelector((state: RootState) => state.photo.albums);
   const filter = useSelector((state: RootState) => state.photo.filter);
-
   const dispatch: AppDispatch = useDispatch();
-
   const [filteredAlbums, setFilteredAlbums] = useState(albums);
 
   const setTitleFilter = (titleFilter: string) => {
@@ -55,7 +49,9 @@ const Albums: NextPage = () => {
         <meta name="description" content="Albums" />
       </Head>
 
-      {!loading ? (
+      {loading ? (
+        <Loader />
+      ) : (
         <section className={styles.container}>
           <Filter
             placeholder="Search"
@@ -68,10 +64,9 @@ const Albums: NextPage = () => {
           />
           <AlbumList albums={filteredAlbums} />
         </section>
-      ) : (
-        <Loader />
       )}
     </Layout>
   );
 };
+
 export default Albums;

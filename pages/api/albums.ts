@@ -39,11 +39,9 @@ const getGoogleAlbums = async (
 };
 
 export default async function Albums(
-  req: NextApiRequest,
+  _req: NextApiRequest,
   res: NextApiResponse<GoogleAlbum[]>
 ) {
-  console.log(req.cookies);
-
   const bearerToken = await getGoogleApiToken();
 
   let nextPageToken: string | undefined = '';

@@ -1,7 +1,6 @@
-import Navbar from './navbar';
-
-import styles from './header.module.scss';
 import { FunctionComponent } from 'react';
+import styles from './header.module.scss';
+import Navbar from './navbar';
 
 const Header: FunctionComponent = () => {
   return (

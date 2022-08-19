@@ -3,8 +3,10 @@
 $color: #333;
 $backgroundColor: whitesmoke;
 
-// $color: whitesmoke;
-// $backgroundColor: #141414;
+/*
+$color: whitesmoke;
+$backgroundColor: #141414;
+*/
 
 html,
 body {
@@ -71,19 +73,14 @@ nav {
   }
 }
 
-footer {
-  color: gray;
-}
-
-
 input[type=text],
 input[type=search] {
   padding: .5rem;
   width: 100%;
-  border: 1px solid silver;
-  box-shadow: 0 0 8px silver;
+  border-width: 1px;
   border-radius: 0.5rem;
   font-size: 1rem;
+  color: $color;
   outline: none;
 }
 

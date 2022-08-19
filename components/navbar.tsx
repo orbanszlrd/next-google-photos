@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { FunctionComponent } from 'react';
 import { FaGithub, FaHome, FaImages } from 'react-icons/fa';
-
 import styles from './navbar.module.scss';
 
 const Navbar: FunctionComponent = () => {

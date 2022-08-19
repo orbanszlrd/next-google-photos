@@ -1,6 +1,8 @@
 .item {
     border-radius: .5rem;
-    background-color: lightgray;
+    background-color: white;
+    color: whitesmoke;
+    border-width: 1px;
 
     .cover {
         position: relative;
@@ -13,8 +15,6 @@
         background-position: center center;
         opacity: 1;
         transition: all .2s linear;
-        border: 1px solid white;
-        box-shadow: 0 0 8px silver;
 
         .title {
             position: absolute;
@@ -29,7 +29,6 @@
             font-size: 1rem;
             font-weight: normal;
             text-decoration: none;
-            color: white;
             background-color: #0008;
             background-image: linear-gradient(to bottom,transparent,black);
             opacity: .8;
@@ -46,7 +45,6 @@
             border-top-right-radius: .5rem;
             border-bottom-left-radius: .5rem;
             background-color: #0006;
-            color: #fff;
             font-size: .8rem;
             opacity: .8;
             transition: all .2s linear;
