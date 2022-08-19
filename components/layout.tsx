@@ -1,8 +1,7 @@
+import { FunctionComponent } from 'react';
+import styles from './layout.module.scss';
 import Header from './header';
 import Footer from './footer';
-
-import styles from './layout.module.scss';
-import { FunctionComponent } from 'react';
 
 export interface LayoutProps {
   children: React.ReactNode;

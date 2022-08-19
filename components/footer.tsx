@@ -2,11 +2,7 @@ import { FunctionComponent } from 'react';
 import styles from './footer.module.scss';
 
 const Footer: FunctionComponent = () => {
-  return (
-    <footer className={styles.footer}>
-      <small>&copy; 2022 orbanszlrd</small>
-    </footer>
-  );
+  return <footer className={styles.footer}></footer>;
 };
 
 export default Footer;
