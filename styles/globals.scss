@@ -2,10 +2,12 @@
 
 $color: #333;
 $backgroundColor: whitesmoke;
+$borderColor: lightgray;
 
-/*
 $color: whitesmoke;
 $backgroundColor: #141414;
+$borderColor: gray;
+/*
 */
 
 html,
@@ -28,7 +30,7 @@ a {
   box-sizing: border-box;
   border-width: 0;
   border-style: solid;
-  border-color: lightgray;
+  border-color: $borderColor;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -59,17 +61,17 @@ h5 {
 }
 
 header {
-  box-shadow: 0 2px 5px #8888884d;
-  background-color: white;
+  box-shadow: 0 4px 16px #8888884d;
+  background-color: $backgroundColor;
 }
 
 nav {
   a {
-    color: #666;
+    color: silver;
   }
 
   a:hover {
-    color: #222;
+    color: whitesmoke;
   }
 }
 
