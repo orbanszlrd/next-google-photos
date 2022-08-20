@@ -1,14 +1,13 @@
 .item {
     border-radius: .5rem;
-    background-color: white;
-    color: whitesmoke;
-    border-width: 1px;
+    border-width: 2px;
+    border-color: lightgray;
 
     .cover {
         position: relative;
         margin: auto;
         padding-bottom: 100%;
-        border-radius: .5rem;
+        border-radius: .3rem;
         text-align: center;
         background-size: cover;
         background-repeat: no-repeat;
@@ -29,7 +28,8 @@
             font-size: 1rem;
             font-weight: normal;
             text-decoration: none;
-            background-color: #0008;
+            text-shadow: 0 1px 1px #0005;
+            background-color: #0005;
             background-image: linear-gradient(to bottom,transparent,black);
             opacity: .8;
             transition: all .2s linear;
