@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { GoogleAlbum } from '../types/google';
+import { GoogleAlbum, GoogleMediaItem } from '../../types/google';
 
 export const fetchAllGoogleAlbums = createAsyncThunk(
   'albums/fetchAll',
@@ -9,22 +9,24 @@ export const fetchAllGoogleAlbums = createAsyncThunk(
   }
 );
 
-export interface AlbumState {
+export interface PhotoLibraryState {
   albums: GoogleAlbum[];
+  mediaItems: GoogleMediaItem[];
   loading: boolean;
   filter: string;
   error: boolean;
 }
 
-const initialState: AlbumState = {
+const initialState: PhotoLibraryState = {
   albums: [],
+  mediaItems: [],
   loading: false,
   filter: '',
   error: false,
 };
 
-export const albumSlice = createSlice({
-  name: 'photo',
+export const photoLibrarySlice = createSlice({
+  name: 'photoLibrary',
   initialState,
   reducers: {
     setLoading: (state, action: PayloadAction<boolean>) => {
@@ -43,10 +45,13 @@ export const albumSlice = createSlice({
         state.loading = true;
         state.error = false;
       })
-      .addCase(fetchAllGoogleAlbums.fulfilled, (state: AlbumState, action) => {
-        state.albums = action.payload;
-        state.loading = false;
-      })
+      .addCase(
+        fetchAllGoogleAlbums.fulfilled,
+        (state: PhotoLibraryState, action) => {
+          state.albums = action.payload;
+          state.loading = false;
+        }
+      )
       .addCase(fetchAllGoogleAlbums.rejected, (state) => {
         state.loading = false;
         state.error = true;
@@ -54,6 +59,6 @@ export const albumSlice = createSlice({
   },
 });
 
-export const { setLoading, setAlbums, setFilter } = albumSlice.actions;
+export const { setLoading, setAlbums, setFilter } = photoLibrarySlice.actions;
 
-export default albumSlice.reducer;
+export default photoLibrarySlice.reducer;

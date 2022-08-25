@@ -4,7 +4,10 @@ import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { GoogleAlbum } from '../types/google';
 import { AppDispatch, RootState } from '../app/store';
-import { setFilter, fetchAllGoogleAlbums } from '../features/photoSlice';
+import {
+  setFilter,
+  fetchAllGoogleAlbums,
+} from '../app/features/photoLibrarySlice';
 import styles from '../styles/Albums.module.scss';
 import AlbumList from '../components/album-list';
 import ElementCounter from '../components/element-counter';
@@ -13,9 +16,9 @@ import Layout from '../components/layout';
 import Loader from '../components/loader';
 
 const Albums: NextPage = () => {
-  const loading = useSelector((state: RootState) => state.photo.loading);
-  const albums = useSelector((state: RootState) => state.photo.albums);
-  const filter = useSelector((state: RootState) => state.photo.filter);
+  const loading = useSelector((state: RootState) => state.photoLibrary.loading);
+  const albums = useSelector((state: RootState) => state.photoLibrary.albums);
+  const filter = useSelector((state: RootState) => state.photoLibrary.filter);
   const dispatch: AppDispatch = useDispatch();
   const [filteredAlbums, setFilteredAlbums] = useState(albums);
 
