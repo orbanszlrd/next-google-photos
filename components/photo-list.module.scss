@@ -1,0 +1,9 @@
+.justify-container {
+  position: relative;
+
+  .justify-box {
+    position: absolute;
+    cursor: help;
+    border-width: 1px;
+  }
+}

@@ -9,6 +9,14 @@ export const fetchAllGoogleAlbums = createAsyncThunk(
   }
 );
 
+export const fetchGoogleMediaItems = createAsyncThunk(
+  'mediaItems/fetch',
+  async () => {
+    const response = await fetch('/api/mediaItems');
+    return response.json();
+  }
+);
+
 export interface PhotoLibraryState {
   albums: GoogleAlbum[];
   mediaItems: GoogleMediaItem[];
@@ -35,6 +43,9 @@ export const photoLibrarySlice = createSlice({
     setAlbums: (state, action: PayloadAction<GoogleAlbum[]>) => {
       state.albums = action.payload;
     },
+    setMediaItems: (state, action: PayloadAction<GoogleMediaItem[]>) => {
+      state.mediaItems = action.payload;
+    },
     setFilter: (state, action: PayloadAction<string>) => {
       state.filter = action.payload;
     },
@@ -55,10 +66,26 @@ export const photoLibrarySlice = createSlice({
       .addCase(fetchAllGoogleAlbums.rejected, (state) => {
         state.loading = false;
         state.error = true;
+      })
+      .addCase(fetchGoogleMediaItems.pending, (state) => {
+        state.loading = true;
+        state.error = false;
+      })
+      .addCase(
+        fetchGoogleMediaItems.fulfilled,
+        (state: PhotoLibraryState, action) => {
+          state.mediaItems = action.payload;
+          state.loading = false;
+        }
+      )
+      .addCase(fetchGoogleMediaItems.rejected, (state) => {
+        state.loading = false;
+        state.error = true;
       });
   },
 });
 
-export const { setLoading, setAlbums, setFilter } = photoLibrarySlice.actions;
+export const { setLoading, setAlbums, setMediaItems, setFilter } =
+  photoLibrarySlice.actions;
 
 export default photoLibrarySlice.reducer;
