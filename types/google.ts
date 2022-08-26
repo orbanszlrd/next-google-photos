@@ -11,3 +11,40 @@ export type GoogleAlbumsData = {
   albums: GoogleAlbum[];
   nextPageToken?: string;
 };
+
+export type GoogleMediaItem = {
+  id: string;
+  description: string;
+  productUrl: string;
+  baseUrl: string;
+  mimeType: string;
+  mediaMetadata: {
+    creationTime: string;
+    width: string;
+    height: string;
+    photo: {
+      cameraMake: string;
+      cameraModel: string;
+      focalLength: number;
+      apertureFNumber: number;
+      isoEquivalent: number;
+      exposureTime: string;
+    };
+    video: {
+      cameraMake: string;
+      cameraModel: string;
+      fps: number;
+      status: string;
+    };
+  };
+  contributorInfo: {
+    profilePictureBaseUrl: string;
+    displayName: string;
+  };
+  filename: string;
+};
+
+export type GoogleMediaItemsData = {
+  mediaItems: GoogleMediaItem[];
+  nextPageToken?: string;
+};
