@@ -1,57 +1,56 @@
 .item {
-    border-radius: .5rem;
-    border-width: 2px;
-    border-color: lightgray;
+  border-radius: 0.5rem;
+  border-width: 2px;
 
-    .cover {
-        position: relative;
-        margin: auto;
-        padding-bottom: 100%;
-        border-radius: .3rem;
-        text-align: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center center;
-        opacity: 1;
-        transition: all .2s linear;
+  .cover {
+    position: relative;
+    margin: auto;
+    padding-bottom: 100%;
+    border-radius: 0.3rem;
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    opacity: 1;
+    transition: all 0.2s linear;
 
-        .title {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            display: block;
-            margin: 0;
-            padding: .5rem;
-            border-bottom-left-radius: .5rem;
-            border-bottom-right-radius: .5rem;
-            font-size: 1rem;
-            font-weight: normal;
-            text-decoration: none;
-            text-shadow: 0 1px 1px #0005;
-            background-color: #0005;
-            background-image: linear-gradient(to bottom,transparent,black);
-            opacity: .8;
-            transition: all .2s linear;
-        }
-
-        .count {
-            position: absolute;
-            top: 0;
-            right: 0;
-            display: block;
-            margin: 0;
-            padding: .5rem;
-            border-top-right-radius: .5rem;
-            border-bottom-left-radius: .5rem;
-            background-color: #0006;
-            font-size: .8rem;
-            opacity: .8;
-            transition: all .2s linear;
-        }
+    .title {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: block;
+      margin: 0;
+      padding: 0.5rem;
+      border-bottom-left-radius: 0.5rem;
+      border-bottom-right-radius: 0.5rem;
+      font-size: 1rem;
+      font-weight: normal;
+      text-decoration: none;
+      text-shadow: 0 1px 1px #0005;
+      background-color: #0005;
+      background-image: linear-gradient(to bottom, transparent, black);
+      opacity: 0.8;
+      transition: all 0.2s linear;
     }
 
-    .cover:hover {
-        opacity: 0.9;
+    .count {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: block;
+      margin: 0;
+      padding: 0.5rem;
+      border-top-right-radius: 0.5rem;
+      border-bottom-left-radius: 0.5rem;
+      background-color: #0006;
+      font-size: 0.8rem;
+      opacity: 0.8;
+      transition: all 0.2s linear;
     }
+  }
+
+  .cover:hover {
+    opacity: 0.9;
+  }
 }

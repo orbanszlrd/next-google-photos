@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { FunctionComponent } from 'react';
 import { FaGithub, FaHome, FaImages } from 'react-icons/fa';
 import styles from './navbar.module.scss';
+import ThemeToggler from './theme-toggler';
 
 const Navbar: FunctionComponent = () => {
   return (
@@ -26,6 +27,9 @@ const Navbar: FunctionComponent = () => {
       </ul>
 
       <ul className={styles.right}>
+        <li>
+          <ThemeToggler />
+        </li>
         <li>
           <a
             href="https://github.com/orbanszlrd/next-google-photos"

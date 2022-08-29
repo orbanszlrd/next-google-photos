@@ -1,14 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
 
-$color: #333;
-$backgroundColor: whitesmoke;
-$borderColor: lightgray;
-
-$color: whitesmoke;
-$backgroundColor: #141414;
-$borderColor: gray;
-/*
-*/
+@import 'themes';
 
 html,
 body {
@@ -16,10 +8,7 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-
-    color: $color;
-    background-color: $backgroundColor;
-  }
+}
 
 a {
   color: inherit;
@@ -30,10 +19,14 @@ a {
   box-sizing: border-box;
   border-width: 0;
   border-style: solid;
-  border-color: $borderColor;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: bold;
 }
 
@@ -62,30 +55,14 @@ h5 {
 
 header {
   box-shadow: 0 4px 16px #8888884d;
-  background-color: $backgroundColor;
 }
 
-nav {
-  a {
-    color: silver;
-  }
-
-  a:hover {
-    color: whitesmoke;
-  }
-}
-
-input[type=text],
-input[type=search] {
-  padding: .5rem;
+input[type='text'],
+input[type='search'] {
+  padding: 0.5rem;
   width: 100%;
   border-width: 1px;
   border-radius: 0.5rem;
   font-size: 1rem;
-  color: $color;
   outline: none;
-}
-
-input:focus {
-  border-color: darkgrey;
 }

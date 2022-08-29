@@ -1,0 +1,62 @@
+.dark {
+  background-color: #141414;
+  color: silver;
+  border-color: currentColor;
+
+  input[type='search'] {
+    color: darkgray;
+    border-color: currentColor;
+
+    &:focus {
+      color: lightgray;
+    }
+  }
+
+  header {
+    background-color: #141414;
+
+    nav {
+      a {
+        color: silver;
+      }
+
+      a:hover,
+      svg:hover {
+        color: whitesmoke;
+      }
+    }
+  }
+
+  article {
+    color: white;
+    border-color: lightgray;
+  }
+}
+
+.light {
+  background-color: white;
+  color: gray;
+
+  input[type='search'] {
+    color: lightgray;
+    border-color: currentColor;
+
+    &:focus {
+      color: gray;
+    }
+  }
+
+  header {
+    background-color: white;
+
+    a:hover,
+    svg:hover {
+      color: #141414;
+    }
+  }
+
+  article {
+    color: white;
+    border-color: whitesmoke;
+  }
+}
