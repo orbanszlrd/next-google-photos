@@ -42,7 +42,7 @@ const PhotoList: FunctionComponent<PhotoListProps> = ({ mediaItems }) => {
       style={{ height: layoutGeometry.containerHeight, width: '100%' }}
     >
       {layoutGeometry.boxes.map((box, index) => (
-        <div
+        <article
           className={styles['justify-box']}
           key={index}
           style={{
@@ -60,7 +60,7 @@ const PhotoList: FunctionComponent<PhotoListProps> = ({ mediaItems }) => {
             ).toLocaleString()}
             layout="fill"
           />
-        </div>
+        </article>
       ))}
     </div>
   );
