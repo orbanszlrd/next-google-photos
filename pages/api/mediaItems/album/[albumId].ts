@@ -1,24 +1,27 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { GoogleMediaItem, GoogleMediaItemsData } from '../../../types/google';
 import {
+  GoogleMediaItem,
+  GoogleMediaItemsData,
+} from '../../../../types/google';
+import {
+  getGoogleAlbumMediaItems,
   getGoogleApiToken,
-  getGoogleMediaItems,
-} from '../../../utils/GoogleApi';
+} from '../../../../utils/GoogleApi';
 
-export default async function MediaItems(
-  _req: NextApiRequest,
+export default async function AlbumMediaItems(
+  req: NextApiRequest,
   res: NextApiResponse<GoogleMediaItem[]>
 ) {
+  const albumId: string = req.query.albumId as string;
   const bearerToken = await getGoogleApiToken();
-  const maxPage = 1;
-  let page = 1;
 
   let nextPageToken: string | undefined = '';
   let mediaItems: GoogleMediaItem[] = [];
 
   do {
-    const data: GoogleMediaItemsData = await getGoogleMediaItems(
+    const data: GoogleMediaItemsData = await getGoogleAlbumMediaItems(
       bearerToken,
+      albumId,
       nextPageToken
     );
 
@@ -27,7 +30,7 @@ export default async function MediaItems(
     }
 
     nextPageToken = data.nextPageToken;
-  } while (nextPageToken && page++ < maxPage);
+  } while (nextPageToken);
 
   res.status(200).json(mediaItems);
 }

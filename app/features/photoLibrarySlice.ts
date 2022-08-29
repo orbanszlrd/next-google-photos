@@ -18,8 +18,21 @@ export const fetchGoogleMediaItems = createAsyncThunk(
   }
 );
 
+export const fetchGoogleAlbumMediaItems = createAsyncThunk(
+  'mediaItems/album/[albumId]',
+  async (albumId: string) => {
+    const response = await fetch(`/api/mediaItems/album/${albumId}`);
+    const mediaItems: GoogleMediaItem[] = await response.json();
+
+    return { albumId, mediaItems };
+  }
+);
+
 export interface PhotoLibraryState {
   albums: GoogleAlbum[];
+  albumPhotos: {
+    [key: string]: GoogleMediaItem[];
+  };
   mediaItems: GoogleMediaItem[];
   loading: boolean;
   filter: string;
@@ -29,6 +42,7 @@ export interface PhotoLibraryState {
 
 const initialState: PhotoLibraryState = {
   albums: [],
+  albumPhotos: {},
   mediaItems: [],
   loading: false,
   filter: '',
@@ -85,6 +99,21 @@ export const photoLibrarySlice = createSlice({
         }
       )
       .addCase(fetchGoogleMediaItems.rejected, (state) => {
+        state.loading = false;
+        state.error = true;
+      })
+      .addCase(fetchGoogleAlbumMediaItems.pending, (state) => {
+        state.loading = true;
+        state.error = false;
+      })
+      .addCase(
+        fetchGoogleAlbumMediaItems.fulfilled,
+        (state: PhotoLibraryState, action) => {
+          state.albumPhotos[action.payload.albumId] = action.payload.mediaItems;
+          state.loading = false;
+        }
+      )
+      .addCase(fetchGoogleAlbumMediaItems.rejected, (state) => {
         state.loading = false;
         state.error = true;
       });
