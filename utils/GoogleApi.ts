@@ -58,6 +58,24 @@ export const getGoogleAlbum = async (
   return result.json();
 };
 
+export const getGoogleAlbumMediaItems = async (
+  bearerToken: string,
+  albumId: string,
+  pageToken: string
+): Promise<GoogleMediaItemsData> => {
+  const result = await fetch(
+    `https://photoslibrary.googleapis.com/v1/mediaItems:search`,
+    {
+      method: 'POST',
+      body: JSON.stringify({ albumId, pageToken }),
+      headers: {
+        Authorization: bearerToken,
+      },
+    }
+  );
+  return result.json();
+};
+
 export const getGoogleMediaItems = async (
   bearerToken: string,
   pageToken: string
