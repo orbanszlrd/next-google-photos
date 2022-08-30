@@ -14,6 +14,10 @@
     li {
       display: inline-block;
 
+      div {
+        padding: 1rem;
+      }
+
       a {
         display: block;
         padding: 1rem;
@@ -38,12 +42,6 @@
         display: none;
       }
 
-      @media only screen and (max-width: 800px) {
-        &.left {
-          padding-left: 0.5rem;
-        }
-      }
-
       @media only screen and (max-width: 600px) {
         span {
           display: none;
@@ -57,12 +55,6 @@
 
     &.right {
       padding-right: 1rem;
-
-      @media only screen and (max-width: 800px) {
-        &.right {
-          padding-right: 0.5rem;
-        }
-      }
     }
   }
 

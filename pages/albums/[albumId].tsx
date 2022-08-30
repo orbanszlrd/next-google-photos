@@ -38,7 +38,7 @@ const AlbumPhotos: NextPage = ({
     <Layout>
       <Head>
         <title>Album Photos</title>
-        <meta name="description" content="Photos" />
+        <meta name="description" content="Album Photos" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {loading ? (
