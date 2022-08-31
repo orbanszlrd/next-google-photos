@@ -1,9 +1,9 @@
 import {
   GoogleAlbum,
-  GoogleAlbumsData,
+  GoogleAlbumsResponse,
   GoogleMediaItem,
-  GoogleMediaItemsData,
-} from '../types/google';
+  GoogleMediaItemsResponse,
+} from 'types/google';
 
 export const getGoogleApiToken = async (): Promise<string> => {
   const tokenResult = await fetch(
@@ -29,7 +29,7 @@ export const getGoogleApiToken = async (): Promise<string> => {
 export const getGoogleAlbums = async (
   bearerToken: string,
   pageToken: string
-): Promise<GoogleAlbumsData> => {
+): Promise<GoogleAlbumsResponse> => {
   const result = await fetch(
     `https://photoslibrary.googleapis.com/v1/albums/?pageSize=50&pageToken=${pageToken}`,
     {
@@ -58,28 +58,10 @@ export const getGoogleAlbum = async (
   return result.json();
 };
 
-export const getGoogleAlbumMediaItems = async (
-  bearerToken: string,
-  albumId: string,
-  pageToken: string
-): Promise<GoogleMediaItemsData> => {
-  const result = await fetch(
-    `https://photoslibrary.googleapis.com/v1/mediaItems:search`,
-    {
-      method: 'POST',
-      body: JSON.stringify({ albumId, pageToken }),
-      headers: {
-        Authorization: bearerToken,
-      },
-    }
-  );
-  return result.json();
-};
-
 export const getGoogleMediaItems = async (
   bearerToken: string,
   pageToken: string
-): Promise<GoogleMediaItemsData> => {
+): Promise<GoogleMediaItemsResponse> => {
   const result = await fetch(
     `https://photoslibrary.googleapis.com/v1/mediaItems/?pageSize=50&pageToken=${pageToken}`,
     {
@@ -100,6 +82,24 @@ export const getGoogleMediaItem = async (
     `https://photoslibrary.googleapis.com/v1/mediaItems/${mediaItemId}`,
     {
       method: 'GET',
+      headers: {
+        Authorization: bearerToken,
+      },
+    }
+  );
+  return result.json();
+};
+
+export const getGoogleMediaItemsAlbum = async (
+  bearerToken: string,
+  albumId: string,
+  pageToken: string
+): Promise<GoogleMediaItemsResponse> => {
+  const result = await fetch(
+    `https://photoslibrary.googleapis.com/v1/mediaItems:search`,
+    {
+      method: 'POST',
+      body: JSON.stringify({ albumId, pageToken }),
       headers: {
         Authorization: bearerToken,
       },

@@ -1,8 +1,8 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { GoogleAlbum } from '../../../types/google';
-import { getGoogleApiToken, getGoogleAlbum } from '../../../utils/GoogleApi';
+import { GoogleAlbum } from 'types/google';
+import { getGoogleApiToken, getGoogleAlbum } from 'utils/GoogleApi';
 
-export default async function Album(
+export default async function ApiAlbum(
   req: NextApiRequest,
   res: NextApiResponse<GoogleAlbum>
 ) {

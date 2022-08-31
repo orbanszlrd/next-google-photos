@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { GoogleAlbum, GoogleMediaItem } from '../../types/google';
-import { Theme } from '../../types/theme';
+import { GoogleAlbum, GoogleMediaItem } from 'types/google';
+import { Theme } from 'types/theme';
 
 export const fetchAllGoogleAlbums = createAsyncThunk(
   'albums/fetchAll',

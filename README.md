@@ -2,7 +2,7 @@
 
 ## Description
 
-Web Application to access your public and private Photos on Google.
+Consuming the Google Photos Library API : Access private Albums and Media Items
 
 ## Website
 
@@ -42,8 +42,10 @@ GOOGLE_GRANT_TYPE="refresh_token"
 
 ## Useful Links
 
-[Google Photos APIs](https://developers.google.com/photos/library/guides/get-started)  
-[Using OAuth 2.0 to Access Google APIs](https://developers.google.com/identity/protocols/oauth2)  
-[GCP Credentials - APIs & Services](https://console.cloud.google.com/apis/credentials)  
-[Google Account Permissions](https://myaccount.google.com/permissions)  
-[Google APIs Node.js Client](https://github.com/googleapis/google-api-nodejs-client)  
+[Google Photos APIs - Overview](https://developers.google.com/photos/library/guides/overview)  
+[Google Photos APIs - Resource summary](https://developers.google.com/photos/library/reference/rest)  
+[Google Identity - Using OAuth 2.0 to Access Google APIs](https://developers.google.com/identity/protocols/oauth2)  
+[Google Cloud Credentials - APIs & Services](https://console.cloud.google.com/apis/credentials)  
+[Google Account Settings - Permissions](https://myaccount.google.com/permissions)  
+[GitHub - Google APIs Node.js Client](https://github.com/googleapis/google-api-nodejs-client)  
+[YouTube - Bring the best of Google Photos to your app](https://www.youtube.com/watch?v=KIFfibtzaEo&ab_channel=GoogleDevelopers)  

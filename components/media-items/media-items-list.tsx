@@ -2,14 +2,16 @@ import Image from 'next/image';
 import { FunctionComponent, useEffect, useState } from 'react';
 import justifyLayout from 'justified-layout';
 
-import { GoogleMediaItem } from '../types/google';
-import styles from './photo-list.module.scss';
+import { GoogleMediaItem } from 'types/google';
+import styles from './media-item-list.module.scss';
 
-export interface PhotoListProps {
+export interface MediaItemListProps {
   mediaItems: GoogleMediaItem[];
 }
 
-const PhotoList: FunctionComponent<PhotoListProps> = ({ mediaItems }) => {
+const MediaItemList: FunctionComponent<MediaItemListProps> = ({
+  mediaItems,
+}) => {
   const photoAspectRatios: number[] = [];
 
   const [containerWidth, setContainerWidth] = useState(0);
@@ -66,4 +68,4 @@ const PhotoList: FunctionComponent<PhotoListProps> = ({ mediaItems }) => {
   );
 };
 
-export default PhotoList;
+export default MediaItemList;

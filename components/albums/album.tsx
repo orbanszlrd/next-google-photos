@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { FunctionComponent } from 'react';
 import { FaGoogle } from 'react-icons/fa';
-import { GoogleAlbum } from '../types/google';
+import { GoogleAlbum } from 'types/google';
 
 import styles from './album.module.scss';
 
@@ -19,7 +19,7 @@ const Album: FunctionComponent<AlbumProps> = ({ album }) => {
         }}
       >
         <h3 className={styles.title}>
-          <Link href={`albums/${album.id}`}>
+          <Link href={`album/${album.id}`}>
             <a title={album.title}>
               {album.title.length > 30
                 ? album.title.substring(0, 27) + '...'

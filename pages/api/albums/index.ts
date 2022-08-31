@@ -1,8 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { GoogleAlbum, GoogleAlbumsData } from '../../../types/google';
-import { getGoogleApiToken, getGoogleAlbums } from '../../../utils/GoogleApi';
+import { GoogleAlbum, GoogleAlbumsResponse } from 'types/google';
+import { getGoogleApiToken, getGoogleAlbums } from 'utils/GoogleApi';
 
-export default async function Albums(
+export default async function ApiAlbums(
   _req: NextApiRequest,
   res: NextApiResponse<GoogleAlbum[]>
 ) {
@@ -13,7 +13,7 @@ export default async function Albums(
   let albums: GoogleAlbum[] = [];
 
   do {
-    const data: GoogleAlbumsData = await getGoogleAlbums(
+    const data: GoogleAlbumsResponse = await getGoogleAlbums(
       bearerToken,
       nextPageToken
     );
