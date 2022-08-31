@@ -10,9 +10,9 @@ const Navbar: FunctionComponent = () => {
       <ul className={styles.left}>
         <li>
           <Link href="/">
-            <a title="Photos">
+            <a title="Photostream">
               <FaHome className={styles.icon} />
-              <span>Photos</span>
+              <span>Photostream</span>
             </a>
           </Link>
         </li>

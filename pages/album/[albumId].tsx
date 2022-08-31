@@ -7,15 +7,15 @@ import {
 import Head from 'next/head';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchGoogleAlbumMediaItems } from '../../app/features/photoLibrarySlice';
-import { AppDispatch, RootState } from '../../app/store';
-import Layout from '../../components/layout';
-import Loader from '../../components/loader';
-import PhotoList from '../../components/photo-list';
+import { fetchGoogleAlbumMediaItems } from 'app/features/photoLibrarySlice';
+import { AppDispatch, RootState } from 'app/store';
+import Layout from 'components/common/layout';
+import Loader from 'components/common/loader';
+import MediaItemList from 'components/media-items/media-items-list';
 
-import styles from '../../styles/Index.module.scss';
+import styles from 'styles/Index.module.scss';
 
-const AlbumPhotos: NextPage = ({
+const AlbumPage: NextPage = ({
   albumId,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   const loading = useSelector((state: RootState) => state.photoLibrary.loading);
@@ -45,14 +45,14 @@ const AlbumPhotos: NextPage = ({
         <Loader />
       ) : (
         <section className={styles.container}>
-          <PhotoList mediaItems={albumPhotos[albumId] || []} />
+          <MediaItemList mediaItems={albumPhotos[albumId] || []} />
         </section>
       )}
     </Layout>
   );
 };
 
-export default AlbumPhotos;
+export default AlbumPage;
 
 export const getServerSideProps: GetServerSideProps = async (
   context: GetServerSidePropsContext

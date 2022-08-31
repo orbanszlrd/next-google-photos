@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react';
-import { GoogleAlbum } from '../types/google';
+import { GoogleAlbum } from 'types/google';
 import Album from './album';
 
 import styles from './album-list.module.scss';

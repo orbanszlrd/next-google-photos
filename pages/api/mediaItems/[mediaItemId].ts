@@ -1,11 +1,8 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { GoogleMediaItem } from '../../../types/google';
-import {
-  getGoogleApiToken,
-  getGoogleMediaItem,
-} from '../../../utils/GoogleApi';
+import { GoogleMediaItem } from 'types/google';
+import { getGoogleApiToken, getGoogleMediaItem } from 'utils/GoogleApi';
 
-export default async function MediaItem(
+export default async function ApiMediaItem(
   req: NextApiRequest,
   res: NextApiResponse<GoogleMediaItem>
 ) {

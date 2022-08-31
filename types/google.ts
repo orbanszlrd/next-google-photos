@@ -7,7 +7,7 @@ export type GoogleAlbum = {
   coverPhotoMediaItemId: string;
 };
 
-export type GoogleAlbumsData = {
+export type GoogleAlbumsResponse = {
   albums: GoogleAlbum[];
   nextPageToken?: string;
 };
@@ -44,7 +44,7 @@ export type GoogleMediaItem = {
   filename: string;
 };
 
-export type GoogleMediaItemsData = {
+export type GoogleMediaItemsResponse = {
   mediaItems: GoogleMediaItem[];
   nextPageToken?: string;
 };

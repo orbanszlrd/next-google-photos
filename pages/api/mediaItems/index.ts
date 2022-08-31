@@ -1,9 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { GoogleMediaItem, GoogleMediaItemsData } from '../../../types/google';
-import {
-  getGoogleApiToken,
-  getGoogleMediaItems,
-} from '../../../utils/GoogleApi';
+import { GoogleMediaItem, GoogleMediaItemsResponse } from 'types/google';
+import { getGoogleApiToken, getGoogleMediaItems } from 'utils/GoogleApi';
 
 export default async function MediaItems(
   _req: NextApiRequest,
@@ -17,7 +14,7 @@ export default async function MediaItems(
   let mediaItems: GoogleMediaItem[] = [];
 
   do {
-    const data: GoogleMediaItemsData = await getGoogleMediaItems(
+    const data: GoogleMediaItemsResponse = await getGoogleMediaItems(
       bearerToken,
       nextPageToken
     );

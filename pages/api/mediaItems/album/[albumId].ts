@@ -1,14 +1,8 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import {
-  GoogleMediaItem,
-  GoogleMediaItemsData,
-} from '../../../../types/google';
-import {
-  getGoogleAlbumMediaItems,
-  getGoogleApiToken,
-} from '../../../../utils/GoogleApi';
+import { GoogleMediaItem, GoogleMediaItemsResponse } from 'types/google';
+import { getGoogleApiToken, getGoogleMediaItemsAlbum } from 'utils/GoogleApi';
 
-export default async function AlbumMediaItems(
+export default async function ApiMediaItemsAlbum(
   req: NextApiRequest,
   res: NextApiResponse<GoogleMediaItem[]>
 ) {
@@ -19,7 +13,7 @@ export default async function AlbumMediaItems(
   let mediaItems: GoogleMediaItem[] = [];
 
   do {
-    const data: GoogleMediaItemsData = await getGoogleAlbumMediaItems(
+    const data: GoogleMediaItemsResponse = await getGoogleMediaItemsAlbum(
       bearerToken,
       albumId,
       nextPageToken

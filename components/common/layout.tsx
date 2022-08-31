@@ -2,8 +2,8 @@ import { FunctionComponent, useEffect } from 'react';
 import styles from './layout.module.scss';
 import Header from './header';
 import Footer from './footer';
-import { Theme } from '../types/theme';
-import { RootState } from '../app/store';
+import { Theme } from 'types/theme';
+import { RootState } from 'app/store';
 import { useSelector } from 'react-redux';
 
 export interface LayoutProps {

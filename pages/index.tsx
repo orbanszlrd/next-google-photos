@@ -1,16 +1,16 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import styles from '../styles/Index.module.scss';
+import styles from 'styles/Index.module.scss';
 
-import Layout from '../components/layout';
-import { AppDispatch, RootState } from '../app/store';
+import Layout from 'components/common/layout';
+import { AppDispatch, RootState } from 'app/store';
 import { useDispatch, useSelector } from 'react-redux';
-import Loader from '../components/loader';
+import Loader from 'components/common/loader';
 import { useEffect } from 'react';
-import { fetchGoogleMediaItems } from '../app/features/photoLibrarySlice';
-import PhotoList from '../components/photo-list';
+import { fetchGoogleMediaItems } from 'app/features/photoLibrarySlice';
+import MediaItemList from 'components/media-items/media-items-list';
 
-const Photos: NextPage = () => {
+const PhotostreamPage: NextPage = () => {
   const loading = useSelector((state: RootState) => state.photoLibrary.loading);
   const mediaItems = useSelector(
     (state: RootState) => state.photoLibrary.mediaItems
@@ -30,19 +30,19 @@ const Photos: NextPage = () => {
   return (
     <Layout>
       <Head>
-        <title>Photos</title>
-        <meta name="description" content="Photos" />
+        <title>Photostream</title>
+        <meta name="description" content="Photostream" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {loading ? (
         <Loader />
       ) : (
         <section className={styles.container}>
-          <PhotoList mediaItems={mediaItems} />
+          <MediaItemList mediaItems={mediaItems} />
         </section>
       )}
     </Layout>
   );
 };
 
-export default Photos;
+export default PhotostreamPage;
