@@ -1,14 +1,15 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import styles from 'styles/Index.module.scss';
-
-import Layout from 'components/common/layout';
-import { AppDispatch, RootState } from 'app/store';
-import { useDispatch, useSelector } from 'react-redux';
-import Loader from 'components/common/loader';
 import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { AppDispatch, RootState } from 'app/store';
 import { fetchGoogleMediaItems } from 'app/features/photoLibrarySlice';
+import Layout from 'components/common/layout';
+import Loader from 'components/common/loader';
 import MediaItemList from 'components/media-items/media-items-list';
+
+import styles from 'styles/Index.module.scss';
 
 const PhotostreamPage: NextPage = () => {
   const loading = useSelector((state: RootState) => state.photoLibrary.loading);
