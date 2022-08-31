@@ -54,25 +54,31 @@ export const photoLibrarySlice = createSlice({
   name: 'photoLibrary',
   initialState,
   reducers: {
-    setLoading: (state, action: PayloadAction<boolean>) => {
+    setLoading: (state: PhotoLibraryState, action: PayloadAction<boolean>) => {
       state.loading = action.payload;
     },
-    setTheme: (state, action: PayloadAction<Theme>) => {
+    setTheme: (state: PhotoLibraryState, action: PayloadAction<Theme>) => {
       state.theme = action.payload;
     },
-    setAlbums: (state, action: PayloadAction<GoogleAlbum[]>) => {
+    setAlbums: (
+      state: PhotoLibraryState,
+      action: PayloadAction<GoogleAlbum[]>
+    ) => {
       state.albums = action.payload;
     },
-    setMediaItems: (state, action: PayloadAction<GoogleMediaItem[]>) => {
+    setMediaItems: (
+      state: PhotoLibraryState,
+      action: PayloadAction<GoogleMediaItem[]>
+    ) => {
       state.mediaItems = action.payload;
     },
-    setFilter: (state, action: PayloadAction<string>) => {
+    setFilter: (state: PhotoLibraryState, action: PayloadAction<string>) => {
       state.filter = action.payload;
     },
   },
   extraReducers: (builder) => {
     builder
-      .addCase(fetchAllGoogleAlbums.pending, (state) => {
+      .addCase(fetchAllGoogleAlbums.pending, (state: PhotoLibraryState) => {
         state.loading = true;
         state.error = false;
       })
@@ -83,11 +89,11 @@ export const photoLibrarySlice = createSlice({
           state.loading = false;
         }
       )
-      .addCase(fetchAllGoogleAlbums.rejected, (state) => {
+      .addCase(fetchAllGoogleAlbums.rejected, (state: PhotoLibraryState) => {
         state.loading = false;
         state.error = true;
       })
-      .addCase(fetchGoogleMediaItems.pending, (state) => {
+      .addCase(fetchGoogleMediaItems.pending, (state: PhotoLibraryState) => {
         state.loading = true;
         state.error = false;
       })
@@ -98,25 +104,37 @@ export const photoLibrarySlice = createSlice({
           state.loading = false;
         }
       )
-      .addCase(fetchGoogleMediaItems.rejected, (state) => {
+      .addCase(fetchGoogleMediaItems.rejected, (state: PhotoLibraryState) => {
         state.loading = false;
         state.error = true;
       })
-      .addCase(fetchGoogleAlbumMediaItems.pending, (state) => {
-        state.loading = true;
-        state.error = false;
-      })
+      .addCase(
+        fetchGoogleAlbumMediaItems.pending,
+        (state: PhotoLibraryState) => {
+          state.loading = true;
+          state.error = false;
+        }
+      )
       .addCase(
         fetchGoogleAlbumMediaItems.fulfilled,
-        (state: PhotoLibraryState, action) => {
+        (
+          state: PhotoLibraryState,
+          action: PayloadAction<{
+            albumId: string;
+            mediaItems: GoogleMediaItem[];
+          }>
+        ) => {
           state.albumPhotos[action.payload.albumId] = action.payload.mediaItems;
           state.loading = false;
         }
       )
-      .addCase(fetchGoogleAlbumMediaItems.rejected, (state) => {
-        state.loading = false;
-        state.error = true;
-      });
+      .addCase(
+        fetchGoogleAlbumMediaItems.rejected,
+        (state: PhotoLibraryState) => {
+          state.loading = false;
+          state.error = true;
+        }
+      );
   },
 });
 
