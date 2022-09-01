@@ -1,6 +1,5 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { GoogleAlbum, GoogleMediaItem } from 'types/google';
-import { Theme } from 'types/theme';
 
 export const fetchAllGoogleAlbums = createAsyncThunk(
   'albums/fetchAll',
@@ -37,7 +36,6 @@ export interface PhotoLibraryState {
   loading: boolean;
   filter: string;
   error: boolean;
-  theme: Theme;
 }
 
 const initialState: PhotoLibraryState = {
@@ -47,7 +45,6 @@ const initialState: PhotoLibraryState = {
   loading: false,
   filter: '',
   error: false,
-  theme: Theme.Dark,
 };
 
 export const photoLibrarySlice = createSlice({
@@ -56,9 +53,6 @@ export const photoLibrarySlice = createSlice({
   reducers: {
     setLoading: (state: PhotoLibraryState, action: PayloadAction<boolean>) => {
       state.loading = action.payload;
-    },
-    setTheme: (state: PhotoLibraryState, action: PayloadAction<Theme>) => {
-      state.theme = action.payload;
     },
     setAlbums: (
       state: PhotoLibraryState,
@@ -138,7 +132,7 @@ export const photoLibrarySlice = createSlice({
   },
 });
 
-export const { setLoading, setTheme, setAlbums, setMediaItems, setFilter } =
+export const { setLoading, setAlbums, setMediaItems, setFilter } =
   photoLibrarySlice.actions;
 
 export default photoLibrarySlice.reducer;

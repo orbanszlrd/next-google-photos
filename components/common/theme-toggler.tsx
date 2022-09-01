@@ -1,15 +1,13 @@
 import { FunctionComponent } from 'react';
 import { HiMoon, HiSun } from 'react-icons/hi';
 import { useDispatch, useSelector } from 'react-redux';
-import { setTheme } from 'app/features/photoLibrarySlice';
+import { setTheme } from 'app/features/settingsSlice';
 import { AppDispatch, RootState } from 'app/store';
 import { Theme } from 'types/theme';
 import styles from './theme-toggler.module.scss';
 
 const ThemeToggler: FunctionComponent = () => {
-  const theme: Theme = useSelector(
-    (state: RootState) => state.photoLibrary.theme
-  );
+  const theme: Theme = useSelector((state: RootState) => state.settings.theme);
   const dispatch: AppDispatch = useDispatch();
 
   return (
