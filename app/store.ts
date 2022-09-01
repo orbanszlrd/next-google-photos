@@ -11,14 +11,17 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
+import settingsReducer from './features/settingsSlice';
 import photoLibraryReducer from './features/photoLibrarySlice';
 
 const persistConfig = {
   key: 'dinodev',
   storage,
+  whitelist: ['settings'],
 };
 
 const rootReducer = combineReducers({
+  settings: settingsReducer,
   photoLibrary: photoLibraryReducer,
 });
 

@@ -11,9 +11,7 @@ export interface LayoutProps {
 }
 
 const Layout: FunctionComponent<LayoutProps> = ({ children }) => {
-  const theme: Theme = useSelector(
-    (state: RootState) => state.photoLibrary.theme
-  );
+  const theme: Theme = useSelector((state: RootState) => state.settings.theme);
 
   useEffect(() => {
     document.body.className = theme;
