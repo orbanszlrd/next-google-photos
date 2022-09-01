@@ -61,6 +61,7 @@ const MediaItemList: FunctionComponent<MediaItemListProps> = ({
               mediaItems[index].mediaMetadata.creationTime
             ).toLocaleString()}
             layout="fill"
+            unoptimized
           />
         </article>
       ))}
