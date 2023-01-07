@@ -37,9 +37,11 @@ const AlbumPage: NextPage = ({
   return (
     <Layout>
       <Head>
-        <title>Album Photos</title>
-        <meta name="description" content="Album Photos" />
-        <link rel="icon" href="/favicon.ico" />
+        <title>Album Photos | Digital Nomad Photos</title>
+        <meta
+          name="description"
+          content="Album Photos | Digital Nomad Photos"
+        />
       </Head>
       {loading ? (
         <Loader />

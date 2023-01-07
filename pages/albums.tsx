@@ -49,8 +49,8 @@ const AlbumsPage: NextPage = () => {
   return (
     <Layout>
       <Head>
-        <title>Albums</title>
-        <meta name="description" content="Albums" />
+        <title>Albums | Digital Nomad Photos</title>
+        <meta name="description" content="Albums | Digital Nomad Photos" />
       </Head>
 
       {loading ? (
