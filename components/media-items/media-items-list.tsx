@@ -18,7 +18,7 @@ const MediaItemList: FunctionComponent<MediaItemListProps> = ({
 
   useEffect(() => {
     function adjustBoxSizes() {
-      setContainerWidth(window.innerWidth);
+      setContainerWidth(Math.min(document.body.clientWidth, 1920));
     }
 
     adjustBoxSizes();
@@ -35,7 +35,13 @@ const MediaItemList: FunctionComponent<MediaItemListProps> = ({
 
   const layoutGeometry = justifyLayout(photoAspectRatios, {
     containerWidth: containerWidth,
-    containerPadding: { top: 32, right: 32, left: 32, bottom: 32 },
+    containerPadding: { top: 0, right: 0, left: 0, bottom: 0 },
+    targetRowHeight: 240,
+    boxSpacing: {
+      horizontal: 4,
+      vertical: 4,
+    },
+    showWidows: false,
   });
 
   return (
@@ -60,7 +66,7 @@ const MediaItemList: FunctionComponent<MediaItemListProps> = ({
             title={new Date(
               mediaItems[index].mediaMetadata.creationTime
             ).toLocaleString()}
-            layout="fill"
+            fill
             unoptimized
           />
         </article>
