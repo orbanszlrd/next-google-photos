@@ -19,12 +19,10 @@ const Album: FunctionComponent<AlbumProps> = ({ album }) => {
         }}
       >
         <h3 className={styles.title}>
-          <Link href={`album/${album.id}`}>
-            <a title={album.title}>
-              {album.title.length > 30
-                ? album.title.substring(0, 27) + '...'
-                : album.title}
-            </a>
+          <Link href={`album/${album.id}`} title={album.title}>
+            {album.title.length > 30
+              ? album.title.substring(0, 27) + '...'
+              : album.title}
           </Link>
         </h3>
 

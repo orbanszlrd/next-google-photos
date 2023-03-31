@@ -9,19 +9,15 @@ const Navbar: FunctionComponent = () => {
     <nav className={styles.nav}>
       <ul className={styles.left}>
         <li>
-          <Link href="/">
-            <a title="Photostream">
-              <FaHome className={styles.icon} />
-              <span>Photostream</span>
-            </a>
+          <Link href="/" title="Photostream">
+            <FaHome className={styles.icon} />
+            <span>Photostream</span>
           </Link>
         </li>
         <li>
-          <Link href="/albums">
-            <a title="Albums">
-              <FaImages className={styles.icon} />
-              <span>Albums</span>
-            </a>
+          <Link href="/albums" title="Albums">
+            <FaImages className={styles.icon} />
+            <span>Albums</span>
           </Link>
         </li>
       </ul>
