@@ -16,12 +16,14 @@ const Filter: FunctionComponent<FilterProps> = ({
   return (
     <div className={styles.filter}>
       <div>
-        <FaSearch />
+        <FaSearch role="img" aria-hidden="true" />
       </div>
       <input
         type="search"
         placeholder={placeholder}
+        aria-label={placeholder}
         value={filter}
+        autoComplete="off"
         onInput={(e: React.FormEvent<HTMLInputElement>) =>
           setFilter(e.currentTarget.value)
         }

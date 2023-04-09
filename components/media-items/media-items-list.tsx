@@ -18,7 +18,12 @@ const MediaItemList: FunctionComponent<MediaItemListProps> = ({
 
   useEffect(() => {
     function adjustBoxSizes() {
-      setContainerWidth(Math.min(document.body.clientWidth, 1920));
+      setContainerWidth(
+        Math.min(
+          document.body.clientWidth ? document.body.clientWidth : 0,
+          1920
+        )
+      );
     }
 
     adjustBoxSizes();
@@ -49,28 +54,30 @@ const MediaItemList: FunctionComponent<MediaItemListProps> = ({
       className={styles['justify-container']}
       style={{ height: layoutGeometry.containerHeight, width: '100%' }}
     >
-      {layoutGeometry.boxes.map((box, index) => (
-        <article
-          className={styles['justify-box']}
-          key={index}
-          style={{
-            top: box.top,
-            left: box.left,
-            width: box.width,
-            height: box.height,
-          }}
-        >
-          <Image
-            src={mediaItems[index].baseUrl}
-            alt={mediaItems[index].filename}
-            title={new Date(
-              mediaItems[index].mediaMetadata.creationTime
-            ).toLocaleString()}
-            fill
-            unoptimized
-          />
-        </article>
-      ))}
+      {layoutGeometry.boxes
+        .filter((box) => box.width && box.height)
+        .map((box, index) => (
+          <article
+            className={styles['justify-box']}
+            key={index}
+            style={{
+              top: box.top,
+              left: box.left,
+              width: box.width,
+              height: box.height,
+            }}
+          >
+            <Image
+              src={mediaItems[index].baseUrl}
+              alt={mediaItems[index].filename}
+              title={new Date(
+                mediaItems[index].mediaMetadata.creationTime
+              ).toLocaleString()}
+              fill
+              unoptimized
+            />
+          </article>
+        ))}
     </div>
   );
 };

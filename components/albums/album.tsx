@@ -19,7 +19,11 @@ const Album: FunctionComponent<AlbumProps> = ({ album }) => {
         }}
       >
         <h3 className={styles.title}>
-          <Link href={`album/${album.id}`} title={album.title}>
+          <Link
+            href={`album/${album.id}`}
+            aria-label={album.title}
+            title={album.title}
+          >
             {album.title.length > 30
               ? album.title.substring(0, 27) + '...'
               : album.title}
@@ -30,10 +34,11 @@ const Album: FunctionComponent<AlbumProps> = ({ album }) => {
           <a
             href={album.productUrl}
             title={'Open Google Photos'}
+            aria-label={'Open Google Photos'}
             target="_blank"
             rel="noreferrer"
           >
-            <FaGoogle />
+            <FaGoogle role="img" aria-hidden="true" />
           </a>
         </div>
 

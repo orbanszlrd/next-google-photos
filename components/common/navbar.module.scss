@@ -38,10 +38,6 @@
     &.left {
       padding-left: 1rem;
 
-      .icon {
-        display: none;
-      }
-
       @media only screen and (max-width: 600px) {
         span {
           display: none;

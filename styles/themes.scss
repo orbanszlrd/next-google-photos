@@ -35,14 +35,14 @@
 
 .light {
   background-color: white;
-  color: gray;
+  color: #666;
 
   input[type='search'] {
-    color: lightgray;
+    color: #666;
     border-color: currentColor;
 
     &:focus {
-      color: gray;
+      color: #222;
     }
   }
 

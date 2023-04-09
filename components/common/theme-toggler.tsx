@@ -17,12 +17,16 @@ const ThemeToggler: FunctionComponent = () => {
           className={styles.icon}
           onClick={() => dispatch(setTheme(Theme.Light))}
           title={`Switch to ${Theme.Light} mode`}
+          role="img"
+          aria-hidden="true"
         />
       ) : (
         <HiMoon
           className={styles.icon}
           onClick={() => dispatch(setTheme(Theme.Dark))}
           title={`Switch to ${Theme.Dark} mode`}
+          role="img"
+          aria-hidden="true"
         />
       )}
     </div>

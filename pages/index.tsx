@@ -31,9 +31,12 @@ const PhotostreamPage: NextPage = () => {
   return (
     <Layout>
       <Head>
-        <title>Photostream | Digital Nomad Photos</title>
-        <meta name="description" content="Photostream | Digital Nomad Photos" />
+        <title>Photostream - Digital Nomad Photos</title>
+        <meta name="description" content="Photostream - Digital Nomad Photos" />
       </Head>
+
+      <h1 hidden>Photostream</h1>
+
       {loading ? (
         <Loader />
       ) : (
