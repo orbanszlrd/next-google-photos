@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { FunctionComponent } from 'react';
-import { FaGithub } from 'react-icons/fa';
+import { FaGithub, FaHome, FaImages } from 'react-icons/fa';
 import styles from './navbar.module.scss';
 import ThemeToggler from './theme-toggler';
 
@@ -10,11 +10,23 @@ const Navbar: FunctionComponent = () => {
       <ul className={styles.left}>
         <li>
           <Link href="/">
+            <FaHome
+              className={styles.icon}
+              title="Home"
+              aria-label="Home"
+              role="img"
+            />
             <span>Photostream</span>
           </Link>
         </li>
         <li>
           <Link href="/albums">
+            <FaImages
+              className={styles.icon}
+              title="Albums"
+              aria-label="Albums"
+              role="img"
+            />
             <span>Albums</span>
           </Link>
         </li>
