@@ -16,7 +16,7 @@
     "push:tags": "git push --tags && git push --tags github && git push --tags gitlab && git push --tags bitbucket"
   },
   "dependencies": {
-    "@reduxjs/toolkit": "^2.3.0",
+    "@reduxjs/toolkit": "^2.4.0",
     "date-fns": "^3.6.0",
     "justified-layout": "^4.1.0",
     "next": "^14.2.18",
@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "@types/justified-layout": "^4.1.4",
-    "@types/node": "^20.17.8",
+    "@types/node": "^20.17.9",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "eslint": "^8.57.1",
