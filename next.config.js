@@ -9,8 +9,7 @@ const nextConfig = {
   images: {
     domains: ['lh3.googleusercontent.com'],
   },
-  reactStrictMode: true,
-  swcMinify: true,
+  reactStrictMode: true
 };
 
 module.exports = nextConfig;
