@@ -1,5 +1,11 @@
 # Next Google Photos
 
+## Project Status
+
+This project is currently archived and no longer functional due to changes in the [Google Photos API Policy](https://developers.google.com/photos/support/updates) effective March 31, 2025.
+
+Google has restricted API access to "app-created data" only, removing the ability for third-party applications to programmatically access a user's full photo library. As this project relied on broad library access to function, it is no longer possible to maintain it in its current form.
+
 ## Description
 
 Consuming the Google Photos Library API : Access private Albums and Media Items
